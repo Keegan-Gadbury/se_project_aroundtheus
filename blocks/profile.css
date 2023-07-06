@@ -31,7 +31,6 @@
   background: transparent url(../images/Add\ Button.svg) center no-repeat;
   min-height: 50px;
   min-width: 150px;
-  margin-left: auto;
   border: none;
 }
 
@@ -59,5 +58,7 @@
 
   .profile__info {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 }
