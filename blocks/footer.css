@@ -1,0 +1,16 @@
+.footer {
+  margin-top: 67px;
+  margin-bottom: 60px;
+  margin-left: 100px;
+}
+
+.footer__content {
+  margin: 0;
+  line-height: 1.2;
+  font-family: "Inter", Arial, sans-serif;
+  color: #545454;
+  max-width: 318px;
+}
+
+@media screen and (max-width: 320px) {
+}
