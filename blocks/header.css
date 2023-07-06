@@ -1,9 +1,10 @@
 .header {
   flex-shrink: 0;
   border-bottom: 1px solid rgba(84, 84, 84, 0.7);
+  margin: 0;
 }
 
-.logo {
+.header__logo {
   margin-top: 45px;
   width: 173px;
   height: 33px;
@@ -16,6 +17,9 @@
     margin: 0 auto;
     max-width: 880px;
   }
+  .header__logo {
+    padding-left: 27px;
+  }
 }
 
 @media screen and (max-width: 480px) {
@@ -23,12 +27,19 @@
     width: 126px;
     height: 24px;
     margin: 0;
-    padding-top: 28px;
     padding-left: 27px;
   }
 
   .header {
     margin-top: 0;
     padding-bottom: 32px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .header__logo {
+    padding-top: 28px;
+    width: 126px;
+    flex-shrink: 0;
   }
 }
