@@ -1,4 +1,6 @@
 .page {
+  font-family: Inter, Arial, Helvetica, sans-serif;
+  margin: 0, auto;
   background-color: black;
   color: white;
 }
@@ -20,17 +22,5 @@
   .page__section {
     margin: 0 20px;
     max-width: calc(100% - 40px);
-  }
-}
-
-@media screen and (max-width: 480px) {
-}
-
-@media screen and (max-width: 320px) {
-  .page__section {
-    max-width: 100%;
-  }
-  .header {
-    border-bottom: 1px solid rgba(84, 84, 84, 84, 0.07);
   }
 }

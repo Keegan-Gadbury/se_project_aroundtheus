@@ -16,6 +16,7 @@
   overflow: hidden;
   height: 361px;
   width: 282px;
+  list-style-type: none;
 }
 
 .card__image {
@@ -36,6 +37,7 @@
 }
 
 .card__subtitle {
+  font-family: "Inter", Arial, sans-serif;
   max-height: 29px;
   max-width: 193px;
   font-weight: 900;
