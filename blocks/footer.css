@@ -23,14 +23,7 @@
   .footer__copyright {
     width: 282px;
     margin: 0;
-    height: 18px;
     font-size: 14px;
-    line-height: normal;
-  }
-}
-
-@media screen and (max-width: 320px) {
-  .footer {
-    margin: 0;
+    line-height: 1.2;
   }
 }
