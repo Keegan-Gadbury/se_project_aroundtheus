@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   padding-top: 40px;
-  padding-bottom: 51px;
+  padding-bottom: 36px;
   max-width: 880px;
   margin: 0 auto;
 }
@@ -82,6 +82,7 @@
 @media screen and (max-width: 320px) {
   .profile {
     flex-direction: column;
+    padding-bottom: 36px;
   }
   .profile__info {
     width: 100%;
@@ -94,6 +95,10 @@
   .profile__edit-button {
     align-self: center;
     margin-left: 10px;
+  }
+
+  .profile__image {
+    margin: 0;
   }
 }
 @media screen and (max-width: 480px) {
@@ -138,10 +143,10 @@
   .profile__add-button {
     margin: 0;
     max-width: 282px;
-    padding: 17px 151px 17px 151px;
+    padding: 17px 138px 17px 140px;
   }
 
-  .profile__picture {
+  .profile__image {
     margin: 0 auto;
   }
 }
