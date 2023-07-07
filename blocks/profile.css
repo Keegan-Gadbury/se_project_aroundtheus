@@ -20,6 +20,7 @@
   border-radius: 50%;
   object-fit: cover;
   background: #c4c4c4;
+  margin-right: 30px;
 }
 
 .profile__edit-button {
