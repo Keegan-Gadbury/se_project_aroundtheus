@@ -18,9 +18,9 @@
   }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 640px) {
   .header__logo {
-    padding-top: 30px;
+    padding-top: 28px;
     width: 126px;
     height: 24px;
     margin: 0;
@@ -28,14 +28,10 @@
   }
 
   .header {
-    margin-top: 0;
     padding-bottom: 32px;
+    margin: 0;
   }
 }
 
-@media screen and (max-width: 320px) {
-  .header__logo {
-    padding-top: 28px;
-    width: 126px;
-  }
+@media screen and (max-width: 620px) {
 }
