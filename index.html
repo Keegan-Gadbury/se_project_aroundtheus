@@ -45,8 +45,12 @@
 
     <div class="modal" id="profile-edit-modal">
       <div class="modal__container">
-        <button class="modal__close" id="profile-modal-close-button"></button>
-        <p class="modal__heading">Edit Profile</p>
+        <button
+          type="button"
+          class="modal__close"
+          id="profile-modal-close-button"
+        ></button>
+        <h2 class="modal__heading">Edit Profile</h2>
         <form class="modal__form">
           <input
             class="modal__input"
@@ -54,6 +58,7 @@
             name="title"
             placeholder="Name"
             id="profile-title-input"
+            required
           />
           <input
             class="modal__input"
@@ -61,8 +66,9 @@
             name="description"
             placeholder="Description"
             id="profile-description-input"
+            required
           />
-          <button class="modal__button">Save</button>
+          <button type="button" class="modal__button">Save</button>
         </form>
       </div>
     </div>
@@ -71,55 +77,12 @@
       <li class="card">
         <img src="" class="card__image" alt="" />
         <div class="card__description">
-          <h2 class="card__subtitle"></h2>
+          <h3 class="card__subtitle"></h3>
           <button type="button" class="card__like-button"></button>
         </div>
       </li>
     </template>
 
-    <script src="./scripts/index.js"></script>
+    <script src="./scripts/index.js" defer></script>
   </body>
 </html>
-
-<!-- <li class="card">
-  <img src="./images/yosemite.jpg" class="card__image" alt="Card Image" />
-  <div class="card__description">
-    <h2 class="card__subtitle">Yosemite Valley</h2>
-    <button type="button" class="card__like-button"></button>
-  </div>
-</li>
-<li class="card">
-  <img src="./images/lake-louise.jpg" class="card__image" alt="Card Image" />
-  <div class="card__description">
-    <h2 class="card__subtitle">Lake Louise</h2>
-    <button type="button" class="card__like-button"></button>
-  </div>
-</li>
-<li class="card">
-  <img src="./images/bald-mountains.jpg" class="card__image" alt="Card Image" />
-  <div class="card__description">
-    <h2 class="card__subtitle">Bald Mountains</h2>
-    <button type="button" class="card__like-button"></button>
-  </div>
-</li>
-<li class="card">
-  <img src="./images/latemar.jpg" class="card__image" alt="Card Image" />
-  <div class="card__description">
-    <h2 class="card__subtitle">Latemar</h2>
-    <button type="button" class="card__like-button"></button>
-  </div>
-</li>
-<li class="card">
-  <img src="./images/vanoise.jpg" class="card__image" alt="Card Image" />
-  <div class="card__description">
-    <h2 class="card__subtitle">Vanoise National Park</h2>
-    <button type="button" class="card__like-button"></button>
-  </div>
-</li>
-<li class="card">
-  <img src="./images/lago.jpg" class="card__image" alt="Card Image" />
-  <div class="card__description">
-    <h2 class="card__subtitle">Lago di Braies</h2>
-    <button type="button" class="card__like-button"></button>
-  </div>
-</li> -->
