@@ -96,9 +96,13 @@ function handleAddCardFormSubmit(evt) {
   evt.preventDefault();
   var formData = new FormData(evt.target);
 
-  console.log(Object.fromEntries(formData));
-  const cardElement = getCardElement();
+  const data = Object.fromEntries(formData);
+  const cardElement = getCardElement({
+    name: data.title,
+    link: data.description,
+  });
 
+  cardListEl.prepend(formData);
   closeAddPopup();
 }
 
