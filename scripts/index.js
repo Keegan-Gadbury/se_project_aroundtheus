@@ -42,7 +42,6 @@ const profileAddCloseButton = document.querySelector(
   "#profile-modal-add-close-button"
 );
 const addCreateButton = document.querySelector("#add-create-button");
-const deleteButton = document.querySelector("#card-delete-button");
 
 const profileTitle = document.querySelector(".profile__title");
 const profileDescription = document.querySelector(".profile__description");
@@ -75,6 +74,11 @@ function getCardElement(cardData) {
   const likeButton = cardElement.querySelector(".card__like-button");
   likeButton.addEventListener("click", () => {
     likeButton.classList.toggle("card__like-button_active");
+  });
+
+  const deleteButton = document.querySelector("#card-delete-button");
+  deleteButton.addEventListener("click", (evt) => {
+    evt.target.closest(".card").remove();
   });
 
   cardImageEl.src = cardData.link;
@@ -136,10 +140,6 @@ profileAddButton.addEventListener("click", () => {
 
 profileAddCloseButton.addEventListener("click", () => {
   closePopup(profileAddModal);
-});
-
-deleteButton.addEventListener("click", () => {
-  cardElement.remove();
 });
 
 document
