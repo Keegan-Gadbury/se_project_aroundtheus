@@ -52,11 +52,17 @@
 }
 
 .card__delete-button {
-  background-image: url(../images/Trash.svg);
+  background: transparent url(../images/Trash.svg) center, no-repeat;
   width 18px;
   height: 19px;
   position: relative;
   left: 250px;
   bottom: 350px;
   border: none;
+}
+
+.card__delete-button:hover {
+  opacity: .6;
+  transition: opacity 1s ease;
+  cursor: pointer;
 }
