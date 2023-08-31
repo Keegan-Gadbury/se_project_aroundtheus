@@ -5,6 +5,7 @@
   overflow: hidden;
   width: 282px;
   list-style-type: none;
+  position: relative;
 }
 
 .card__image {
@@ -52,17 +53,17 @@
 }
 
 .card__delete-button {
-  background: transparent url(../images/Trash.svg) center, no-repeat;
-  width 18px;
+  background: url(../images/Trash.svg) center, no-repeat;
+  width: 18px;
   height: 19px;
-  position: relative;
-  left: 250px;
-  bottom: 350px;
+  position: absolute;
+  top: 18px;
+  right: 15px;
   border: none;
 }
 
 .card__delete-button:hover {
-  opacity: .6;
+  opacity: 0.6;
   transition: opacity 1s ease;
   cursor: pointer;
 }

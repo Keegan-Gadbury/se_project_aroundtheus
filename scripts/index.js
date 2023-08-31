@@ -42,7 +42,7 @@ const profileAddCloseButton = document.querySelector(
   "#profile-modal-add-close-button"
 );
 const addCreateButton = document.querySelector("#add-create-button");
-const deleteButton = document.querySelector(".card__delete-button");
+const deleteButton = document.querySelector("#card-delete-button");
 
 const profileTitle = document.querySelector(".profile__title");
 const profileDescription = document.querySelector(".profile__description");
