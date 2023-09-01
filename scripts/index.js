@@ -57,7 +57,7 @@ const cardTitleInput = document.querySelector("#profile-add-title-input");
 const cardUrlInput = document.querySelector("#profile-add-link-input");
 
 // Preview Modal Data
-const previewImageModal = document.querySelector("#preview-image-modal");
+const previewImageModal = document.querySelector(".preview-image-modal");
 const previewImageCloseModal = document.querySelector(
   "#preview-modal-close-button"
 );
