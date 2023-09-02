@@ -7,15 +7,25 @@
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 999;
   display: none;
+  transition: ;
 }
 
 .modal__opened {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: show 0.2s;
 }
 
 .modal__container {
   background-color: white;
   padding: 36px;
+  margin: auto;
+  border-radius: 10px;
+  position: relative;
+}
+
+.modal__container-preview {
   margin: auto;
   border-radius: 10px;
   position: relative;
@@ -28,7 +38,6 @@
   background-size: contain;
   background-color: transparent;
   border: none;
-  /* outline: none; */
   height: 40px;
   width: 40px;
   position: absolute;
@@ -40,9 +49,24 @@
   font-size: 24px;
   font-family: "Inter", Arial, Helvetica, sans-serif;
   font-weight: 900;
-  /* width: 330px; */
   margin: 0;
   padding: 34px 28px 54px 0px;
+}
+
+.modal__preview_title {
+  color: #fff;
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding-top: 10px;
+}
+
+.modal__preview_image {
+  width: 433px;
+  height: 540px;
+  flex-shrink: 0;
 }
 
 .modal__form {
@@ -74,19 +98,61 @@
   cursor: pointer;
 }
 
+.modal__preview_image {
+  justify-content: center;
+  align-content: center;
+  font-weight: 400;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  color: white;
+  width: 433px;
+  height: 540px;
+}
+
 @media screen and (max-width: 620px) {
   .modal__container {
     padding: 22px;
   }
   .modal__heading {
-    padding: 3px 0 75px;
+    padding: 10px 0 75px;
   }
   .modal__input {
     margin-bottom: 30px;
   }
   .modal__close {
-    right: 0;
+    right: -45px;
     height: 26px;
     width: 26px;
+  }
+  .modal__preview_image {
+    width: 240px;
+    height: 299px;
+    flex-shrink: 0;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .modal__container {
+    width: 282px;
+    height: 322px;
+    flex-shrink: 0;
+  }
+
+  .modal__heading {
+    padding-top: 10px;
+  }
+
+  .modal__button {
+    padding: 14px 0px 19px 0px;
+  }
+}
+
+@keyframes show {
+  from {
+    opacity: 0;
+    transfrom: scale(0);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
   }
 }
