@@ -135,10 +135,6 @@ function handleAddCardFormSubmit(evt) {
   closePopup(profileAddModal);
 }
 
-previewImageCloseModal.addEventListener("click", () => {
-  closePopup(previewImageModal);
-});
-
 /*-------------------------------------------------------------*/
 /*                         Event Listeners                     */
 /*-------------------------------------------------------------*/
@@ -158,10 +154,6 @@ initialCards.forEach((cardData) => {
 
 profileAddButton.addEventListener("click", () => {
   openPopup(profileAddModal);
-});
-
-profileAddCloseButton.addEventListener("click", () => {
-  closePopup(profileAddModal);
 });
 
 document
