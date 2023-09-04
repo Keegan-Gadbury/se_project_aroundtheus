@@ -68,11 +68,11 @@ const previewTitleEl = document.querySelector("#preview-image-title");
 /*                            Functions                        */
 /*-------------------------------------------------------------*/
 function closePopup(modal) {
-  modal.classList.remove("modal__opened");
+  modal.classList.remove("modal_opened");
 }
 
 function openPopup(modal) {
-  modal.classList.add("modal__opened");
+  modal.classList.add("modal_opened");
 }
 
 function getCardElement(cardData) {
