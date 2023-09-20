@@ -166,9 +166,6 @@ const closeButtons = document.querySelectorAll(".modal__close");
 closeButtons.forEach((button) => {
   // find the closest popup
   const popup = button.closest(".modal");
-  console.log(popup);
   // set the listener
   button.addEventListener("click", () => closePopup(popup));
 });
-
-console.log(closeButtons);
