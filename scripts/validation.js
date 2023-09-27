@@ -32,10 +32,10 @@ function checkInputValidity(formEl, inputEl) {
 }
 
 // Toggle the Submit button to disable
-function toggleButtonState(inputEls, submitButton, options) {
+function toggleButtonState(inputEls, submitButton, { inactiveButtonClass }) {
   let foundInvalid = false;
   inputEls.forEach((input) => {
-    if (!inputEl.validity.valid) {
+    if (!inputEls.valid) {
       foundInvalid = true;
     }
   });
@@ -57,7 +57,7 @@ function setEventListeners(formEl, options) {
   inputEls.forEach((inputEl) => {
     inputEl.addEventListener("input", (e) => {
       checkInputValidity(formEl, inputEl, options);
-      toggleButtonState(inputEl, submitButton, options);
+      toggleButtonState(inputEls, submitButton, options);
     });
   });
 }
