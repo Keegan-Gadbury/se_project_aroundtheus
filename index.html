@@ -63,17 +63,33 @@
             name="title"
             placeholder="Name"
             id="profile-title-input"
+            maxlength="40"
+            minlength="2"
             required
           />
+          <span id="profile-title-input-error" class="modal__error"></span>
           <input
             class="modal__input"
             type="text"
             name="description"
             placeholder="Description"
             id="profile-description-input"
+            maxlength="40"
+            minlength="2"
             required
           />
-          <button type="submit" class="modal__button">Save</button>
+          <span
+            id="profile-description-input-error"
+            class="modal__error"
+          ></span>
+
+          <button
+            id="editModalSubmitButton"
+            type="submit"
+            class="modal__button"
+          >
+            Save
+          </button>
         </form>
       </div>
     </div>
@@ -94,16 +110,22 @@
             name="title"
             placeholder="Title"
             id="profile-add-title-input"
+            maxlength="40"
+            minlength="2"
             required
           />
+          <span id="profile-add-title-input-error" class="modal__error"></span>
           <input
             class="modal__input"
-            type="text"
+            type="url"
             name="description"
             placeholder="Image link"
             id="profile-add-link-input"
+            maxlength="40"
+            minlength="2"
             required
           />
+          <span id="profile-add-link-input-error" class="modal__error"></span>
           <button id="add-create-button" type="submit" class="modal__button">
             Create
           </button>
