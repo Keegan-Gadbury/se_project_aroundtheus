@@ -2,7 +2,7 @@ const config = {
   formSelector: ".modal__form",
   inputSelector: ".modal__input",
   submitButtonSelector: ".modal__button",
-  inactiveButtonClass: ".modal__button_disabled",
+  inactiveButtonClass: "modal__button_disabled",
   inputErrorClass: ".modal__error",
   errorClass: ".modal__input_type_error",
 };
@@ -32,21 +32,36 @@ function checkInputValidity(formEl, inputEl) {
 }
 
 // Toggle the Submit button to disable
-function toggleButtonState(inputEls, submitButton, { inactiveButtonClass }) {
-  let foundInvalid = false;
-  inputEls.forEach((input) => {
-    if (!inputEls.valid) {
-      foundInvalid = true;
-    }
-  });
+// function toggleButtonState(inputEls, submitButton, { inactiveButtonClass }) {
+//   let foundInvalid = false;
+//   inputEls.forEach((input) => {
+//     if (!inputEls.valid) {
+//       foundInvalid = true;
+//     }
+//   });
 
-  if (foundInvalid) {
+//   if (foundInvalid) {
+//     submitButton.classList.add(inactiveButtonClass);
+//     submitButton.disabled = true;
+//   } else {
+//     submitButton.classList.remove(inactiveButtonClass);
+//     submitButton.disabled = false;
+//   }
+// }
+
+function hasInvalidInput(inputList) {
+  return !inputList.every((inputEl) => inputEl.validity.valid);
+}
+
+function toggleButtonState(inputEls, submitButton, { inactiveButtonClass }) {
+  if (hasInvalidInput(inputEls)) {
     submitButton.classList.add(inactiveButtonClass);
     submitButton.disabled = true;
-  } else {
-    submitButton.classList.remove(inactiveButtonClass);
-    submitButton.disabled = false;
+    return;
   }
+
+  submitButton.classList.remove(inactiveButtonClass);
+  submitButton.disabled = false;
 }
 
 //sets evt listeners and listens for inputs to send to the according function.

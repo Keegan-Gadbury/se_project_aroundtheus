@@ -69,10 +69,19 @@ const previewTitleEl = document.querySelector("#preview-image-title");
 /*-------------------------------------------------------------*/
 function closePopup(modal) {
   modal.classList.remove("modal_opened");
+  document.removeEventListener("keydown", closeByEscape);
+}
+
+function closeByEscape(evt) {
+  if (evt.key === "Escape") {
+    const openModal = document.querySelector(".modal_opened");
+    closePopup(openModal);
+  }
 }
 
 function openPopup(modal) {
   modal.classList.add("modal_opened");
+  document.addEventListener("keydown", closeByEscape);
 }
 
 function getCardElement(cardData) {
@@ -160,12 +169,17 @@ document
   .getElementById("add-card-form")
   .addEventListener("submit", handleAddCardFormSubmit);
 
-// find all close buttons
 const closeButtons = document.querySelectorAll(".modal__close");
 
 closeButtons.forEach((button) => {
-  // find the closest popup
   const popup = button.closest(".modal");
-  // set the listener
   button.addEventListener("click", () => closePopup(popup));
+});
+
+[profileEditModal, profileAddModal, previewImageModal].forEach((modal) => {
+  modal.addEventListener("mousedown", (evt) => {
+    if (evt.target.classList.contains("modal")) {
+      closePopup(modal);
+    }
+  });
 });
