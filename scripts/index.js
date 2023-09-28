@@ -132,11 +132,6 @@ function handleAddCardFormSubmit(evt) {
     link: data.description,
   });
 
-  console.log("=============");
-  console.log("formData", formData);
-  console.log("data", data);
-  console.log("cardElement", cardElement);
-
   evt.target.reset();
 
   cardListEl.prepend(cardElement);

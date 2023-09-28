@@ -10,44 +10,27 @@ const config = {
 enableValidation(config);
 
 // Find error message and adding it to the spanEl and changing styles
-function showInputError(formEl, inputEl, errorMessage) {
+function showInputError(formEl, inputEl, errorMessage, options) {
   const errorMessageEl = formEl.querySelector(`#${inputEl.id}-error`);
-  inputEl.classList.add("modal__input_type_error");
+  inputEl.classList.add(options.errorClass);
   errorMessageEl.textContent = errorMessage;
 }
 //removes error classes from input and removes error message
-function hideInputError(formEl, inputEl) {
-  inputEl.classList.remove("modal__input_type_error");
-  inputEl.classList.remove("modal__input_type_error");
+function hideInputError(formEl, inputEl, options) {
+  inputEl.classList.remove(options.errorClass);
+
   const errorMessageEl = formEl.querySelector(`#${inputEl.id}-error`);
   errorMessageEl.textContent = "";
 }
 //checks if inputs are true, and passes them to according function
-function checkInputValidity(formEl, inputEl) {
+function checkInputValidity(formEl, inputEl, options) {
   if (!inputEl.validity.valid) {
-    showInputError(formEl, inputEl, inputEl.validationMessage);
+    console.log(inputEl.validationMessage);
+    showInputError(formEl, inputEl, inputEl.validationMessage, options);
   } else {
-    hideInputError(formEl, inputEl);
+    hideInputError(formEl, inputEl, options);
   }
 }
-
-// Toggle the Submit button to disable
-// function toggleButtonState(inputEls, submitButton, { inactiveButtonClass }) {
-//   let foundInvalid = false;
-//   inputEls.forEach((input) => {
-//     if (!inputEls.valid) {
-//       foundInvalid = true;
-//     }
-//   });
-
-//   if (foundInvalid) {
-//     submitButton.classList.add(inactiveButtonClass);
-//     submitButton.disabled = true;
-//   } else {
-//     submitButton.classList.remove(inactiveButtonClass);
-//     submitButton.disabled = false;
-//   }
-// }
 
 function hasInvalidInput(inputList) {
   return !inputList.every((inputEl) => inputEl.validity.valid);
@@ -57,18 +40,17 @@ function toggleButtonState(inputEls, submitButton, { inactiveButtonClass }) {
   if (hasInvalidInput(inputEls)) {
     submitButton.classList.add(inactiveButtonClass);
     submitButton.disabled = true;
-    return;
+  } else {
+    submitButton.classList.remove(inactiveButtonClass);
+    submitButton.disabled = false;
   }
-
-  submitButton.classList.remove(inactiveButtonClass);
-  submitButton.disabled = false;
 }
 
 //sets evt listeners and listens for inputs to send to the according function.
 function setEventListeners(formEl, options) {
   const { inputSelector } = options;
   const inputEls = [...formEl.querySelectorAll(inputSelector)];
-  const submitButton = formEl.querySelector(".modal__button");
+  const submitButton = formEl.querySelector(options.submitButtonSelector);
   inputEls.forEach((inputEl) => {
     inputEl.addEventListener("input", (e) => {
       checkInputValidity(formEl, inputEl, options);
@@ -86,8 +68,3 @@ function enableValidation(options) {
     setEventListeners(formEl, options);
   });
 }
-
-const errorMessages = {
-  "profile-title-input": "Please fill out this field.",
-  "profile-description-input": "Please fill out this field.",
-};
