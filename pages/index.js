@@ -1,3 +1,6 @@
+import Card from "../components/Card.js";
+import { FormValidator } from "../components/FormValidator.js";
+
 const initialCards = [
   {
     name: "Yosemite Valley",
@@ -178,3 +181,19 @@ closeButtons.forEach((button) => {
     }
   });
 });
+
+const profileFormValidator = new FormValidator(config, profileFormElement);
+profileFormValidator.enableValidation();
+
+const addFormValidator = new FormValidator(config, addCardFormElement);
+addFormValidator.enableValidation();
+
+initialCards.forEach((cardData) => {
+  const cardElement = createCard(cardData);
+  cardsWrap.append(cardElement);
+});
+
+function createCard(cardData) {
+  const card = new Card(cardData, "#card-template", handleImagePreview);
+  return card.getView();
+}
