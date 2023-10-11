@@ -54,7 +54,6 @@ const profileTitleInput = document.querySelector("#profile-title-input");
 const profileDescriptionInput = document.querySelector(
   "#profile-description-input"
 );
-const cardTemplate = document.querySelector("#card-template").content;
 
 // Form Data
 const cardTitleInput = document.querySelector("#profile-add-title-input");
