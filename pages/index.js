@@ -95,6 +95,7 @@ function handleProfileEditSubmit(evt) {
   profileTitle.textContent = profileTitleInput.value;
   profileDescription.textContent = profileDescriptionInput.value;
   closePopup(profileEditModal);
+  FormValidator.toggleButtonState();
 }
 
 function handleAddCardFormSubmit(evt) {
