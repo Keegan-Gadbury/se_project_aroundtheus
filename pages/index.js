@@ -36,6 +36,8 @@ const initialCards = [
 const profileEditModal = document.querySelector("#profile-edit-modal");
 const cardListEl = document.querySelector(".cards__list");
 const profileAddModal = document.querySelector("#profile-add-modal");
+const profileEditFormElement = profileEditModal.querySelector(".modal__form");
+const profileAddFormElement = profileAddModal.querySelector(".modal__form");
 
 // Buttons and other DOM Nodes
 const profileEditButton = document.querySelector("#profile-edit-button");
@@ -142,6 +144,13 @@ function handleAddCardFormSubmit(evt) {
   closePopup(profileAddModal);
 }
 
+function handleImagePreview(name, link) {
+  modalImage.src = link;
+  modalImage.alt = name;
+  modalText.textContent = name;
+  openPopup(editProfileModal);
+}
+
 /*-------------------------------------------------------------*/
 /*                         Event Listeners                     */
 /*-------------------------------------------------------------*/
@@ -182,18 +191,27 @@ closeButtons.forEach((button) => {
   });
 });
 
-const profileFormValidator = new FormValidator(config, profileFormElement);
+const config = {
+  formSelector: ".modal__form",
+  inputSelector: ".modal__input",
+  submitButtonSelector: ".modal__button",
+  inactiveButtonClass: "modal__button_disabled",
+  inputErrorClass: ".modal__error",
+  errorClass: ".modal__input_type_error",
+};
+
+const profileFormValidator = new FormValidator(config, profileEditFormElement);
 profileFormValidator.enableValidation();
 
-const addFormValidator = new FormValidator(config, addCardFormElement);
+const addFormValidator = new FormValidator(config, profileAddFormElement);
 addFormValidator.enableValidation();
 
-initialCards.forEach((cardData) => {
-  const cardElement = createCard(cardData);
-  cardsWrap.append(cardElement);
+initialCards.forEach((formData) => {
+  const cardElement = createCard(formData);
+  cardListEl.append(cardElement);
 });
 
-function createCard(cardData) {
-  const card = new Card(cardData, "#card-template", handleImagePreview);
+function createCard(formData) {
+  const card = new Card(formData, "#card-template", handleImagePreview);
   return card.getView();
 }
