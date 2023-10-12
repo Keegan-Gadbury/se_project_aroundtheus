@@ -15,11 +15,14 @@ export default class Card {
       });
 
     //.card__delete-button
-    this._deleteButton = this._cardElement
-      .querySelector(".card__delete-button")
-      .addEventListener("click", () => {
-        this._handleDeleteCard();
-      });
+    this._deleteButton.addEventListener("click", () => {
+      this._handleDeleteCard();
+    });
+
+    //.card__like-button
+    this._likeButton.addEventListener("click", () => {
+      this._handleLikeIcon();
+    });
 
     this._cardImage.addEventListener("click", () => {
       this._handleImageClick(this._name, this._link);
@@ -41,6 +44,11 @@ export default class Card {
       .querySelector(this._cardSelector)
       .content.querySelector(".card")
       .cloneNode(true);
+
+    this._likeButton = this._cardElement.querySelector(".card__like-button");
+    this._deleteButton = this._cardElement.querySelector(
+      ".card__delete-button"
+    );
 
     this._cardImage = this._cardElement.querySelector(".card__image");
     this._cardTitle = this._cardElement.querySelector(".card__subtitle");

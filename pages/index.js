@@ -46,14 +46,16 @@ const profileAddButton = document.querySelector("#profile-add-button");
 const profileAddCloseButton = document.querySelector(
   "#profile-modal-add-close-button"
 );
-const addCreateButton = document.querySelector("#add-create-button");
-
 const profileTitle = document.querySelector(".profile__title");
 const profileDescription = document.querySelector(".profile__description");
 const profileTitleInput = document.querySelector("#profile-title-input");
 const profileDescriptionInput = document.querySelector(
   "#profile-description-input"
 );
+const profileEditSubmitButton = profileEditFormElement.querySelector(
+  "#editModalSubmitButton"
+);
+profileEditFormElement.querySelector("#add-create-button");
 
 // Form Data
 const cardTitleInput = document.querySelector("#profile-add-title-input");
@@ -95,7 +97,6 @@ function handleProfileEditSubmit(evt) {
   profileTitle.textContent = profileTitleInput.value;
   profileDescription.textContent = profileDescriptionInput.value;
   closePopup(profileEditModal);
-  FormValidator.toggleButtonState();
 }
 
 function handleAddCardFormSubmit(evt) {
@@ -120,7 +121,7 @@ function handleImagePreview(name, link) {
   modalImage.src = link;
   modalImage.alt = name;
   modalText.textContent = name;
-  openPopup(previewImageCloseModal);
+  openPopup(previewImageModal);
 }
 
 /*-------------------------------------------------------------*/
