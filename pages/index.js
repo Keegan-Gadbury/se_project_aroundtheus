@@ -140,9 +140,7 @@ profileAddButton.addEventListener("click", () => {
   openPopup(profileAddModal);
 });
 
-document
-  .getElementById("add-card-form")
-  .addEventListener("submit", handleAddCardFormSubmit);
+profileAddFormElement.addEventListener("submit", handleAddCardFormSubmit);
 
 const closeButtons = document.querySelectorAll(".modal__close");
 
