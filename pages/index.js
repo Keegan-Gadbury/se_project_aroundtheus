@@ -110,7 +110,8 @@ function handleAddCardFormSubmit(evt) {
     link: data.description,
   });
 
-  evt.target.reset();
+  profileAddFormElement.reset();
+  addFormValidator.disableSubmitButton();
 
   cardListEl.prepend(cardElement);
 
