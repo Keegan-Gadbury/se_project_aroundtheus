@@ -5,7 +5,9 @@ import Card from "../components/Card.js";
 import { FormValidator } from "../components/FormValidator.js";
 import Popup from "../components/Popup.js";
 import PopupWithForm from "../components/PopupWithForm.js";
+import PopupWithImage from "../components/PopupWithImage";
 import Section from "../components/Section.js";
+import UserInfo from "../components/UserInfo.js";
 import {
   initialCards,
   profileEditModal,
@@ -36,6 +38,8 @@ const addImageModal = new PopupWithForm(
   "#profile-add-modal",
   handleAddFormSubmit
 );
+
+const addPicPopup = new PopupWithForm("#profile-add-modal", () => {});
 addPicPopup.setEventListeners();
 
 const editProfileModal = new PopupWithForm(
@@ -44,10 +48,16 @@ const editProfileModal = new PopupWithForm(
 );
 editProfileModal.setEventListeners();
 
-const editFormValidator = new FormValidator(config, profileModalForm);
+const editFormValidator = new FormValidator(
+  config,
+  document.getElementById("edit-form")
+);
 editFormValidator.enableValidation();
 
-const addFormValidator = new FormValidator(config, profileAddModalForm);
+const addFormValidator = new FormValidator(
+  config,
+  document.getElementById("add-card-form")
+);
 editFormValidator.enableValidation();
 
 // User Info
