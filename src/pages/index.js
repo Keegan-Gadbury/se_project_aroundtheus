@@ -39,7 +39,10 @@ const addImageModal = new PopupWithForm(
   handleAddFormSubmit
 );
 
-const addPicPopup = new PopupWithForm("#profile-add-modal", () => {});
+const addPicPopup = new PopupWithForm(
+  "#profile-add-modal",
+  profileEditSubmitButton
+);
 addPicPopup.setEventListeners();
 
 const editProfileModal = new PopupWithForm(
@@ -47,6 +50,7 @@ const editProfileModal = new PopupWithForm(
   handleEditProfileFormSubmit
 );
 editProfileModal.setEventListeners();
+profileEditButton.addEventListener("click", editProfileModal.open);
 
 const editFormValidator = new FormValidator(
   config,
@@ -101,7 +105,7 @@ profileAddButton.addEventListener("click", () => {
 
 // Preview Modal
 
-const imagePreview = new PopupWithImage(".preview-image-modal");
+const imagePreview = new PopupWithImage("#preview-image-modal");
 imagePreview.setEventListeners();
 
 // Section
