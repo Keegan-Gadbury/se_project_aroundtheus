@@ -9,7 +9,7 @@
   display: none;
 }
 
-.modal_opened {
+.modal__opened {
   display: flex;
   justify-content: center;
   align-items: center;

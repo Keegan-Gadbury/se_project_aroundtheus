@@ -6,26 +6,26 @@ export default class Popup {
 
   open() {
     this._popupElement.classList.add("modal__opened");
-    document.addEventListener("keydown", this._handleEscClose);
-    this._popupElement.addEventListener("mousedown", this._closeOnRemoteClick);
+    document.addEventListener("keydown", (event) =>
+      this._handleEscClose(event)
+    );
+    this._popupElement.addEventListener("mousedown", (event) =>
+      this._closeOnRemoteClick(event)
+    );
   }
 
   close() {
     this._popupElement.classList.remove("modal__opened");
     document.removeEventListener("keydown", this._handleEscClose);
-    this._popupElement.removeEventListener(
-      "mousedown",
-      this._closeOnRemoteClick
-    );
   }
 
-  _handleEscClose() {
+  _handleEscClose(evt) {
     if (evt.key === "Escape") {
       this.close();
     }
   }
 
-  _closeOnRemoteClick() {
+  _closeOnRemoteClick(evt) {
     if (evt.target === evt.currentTarget) {
       this.close();
     }
