@@ -56,7 +56,10 @@ editProfileModal.setEventListeners();
 
 const imagePreview = new PopupWithImage("#preview-image-modal");
 imagePreview.setEventListeners();
-
+const cardSection = new Section(
+  { items: initialCards, renderer: renderCard },
+  ".cards__list"
+);
 function renderCard(data) {
   const card = new Card(data, "#card-template", () => handleImageClick(data));
   const element = card.getView();
@@ -77,14 +80,9 @@ const addFormValidator = new FormValidator(
   config,
   document.getElementById("add-card-form")
 );
-editFormValidator.enableValidation();
+addFormValidator.enableValidation();
 
 // Card Section
-
-const cardSection = new Section(
-  { items: initialCards, renderer: renderCard },
-  ".cards__list"
-);
 
 cardSection.renderItems();
 
@@ -96,7 +94,7 @@ function handleImageClick(data) {
 
 function handleAddFormSubmit(data) {
   renderCard(data);
-  profileAddModal.close();
+  addPicPopup.close();
 }
 
 function handleEditProfileFormSubmit(data) {

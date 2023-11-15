@@ -27,7 +27,7 @@ export class FormValidator {
     }
   }
 
-  _hasInvalidInput(inputEls) {
+  _hasInvalidInput() {
     return !this._inputEls.every((inputEl) => inputEl.validity.valid);
   }
 
