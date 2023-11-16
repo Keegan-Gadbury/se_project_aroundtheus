@@ -34,7 +34,7 @@ import {
 
 // User Info
 
-const newUserInfo = new UserInfo("#profile-title", "#profile-description");
+const userInfo = new UserInfo("#profile-title", "#profile-description");
 
 // Add Picture Popup
 
@@ -98,17 +98,16 @@ function handleAddFormSubmit(data) {
 }
 
 function handleEditProfileFormSubmit(data) {
-  newUserInfo.setUserInfo(data);
+  userInfo.setUserInfo(data);
   editProfileModal.close();
 }
 
 // Event Listeners
 
 profileEditButton.addEventListener("click", () => {
-  const data = newUserInfo.getUserInfo();
-  profileTitle.value = data.name;
-  profileDescription.value = data.about;
-  editFormValidator.resetValidation();
+  const data = userInfo.getUserInfo();
+  profileTitleInput.value = data.name;
+  profileDescriptionInput.value = data.about;
   editProfileModal.open();
 });
 
