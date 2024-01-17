@@ -24,6 +24,10 @@
   position: relative;
 }
 
+.modal__container-horizontal {
+  width: 430px;
+}
+
 .modal__container-preview {
   margin: auto;
   border-radius: 10px;

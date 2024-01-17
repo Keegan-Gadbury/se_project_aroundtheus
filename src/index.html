@@ -22,6 +22,11 @@
             alt="Profile Image"
             class="profile__image"
           />
+          <button
+            class="profile__image-edit"
+            id="profile-image-edit-button"
+            type="button"
+          ></button>
           <div class="profile__info">
             <h1 class="profile__title" id="profile-title">Jacques Cousteau</h1>
             <button
@@ -156,14 +161,44 @@
       </div>
     </div>
 
+    <!-- Profile Picture Change Modal-->
+    <div class="modal" id="edit-profile-image-modal">
+      <div class="modal__container modal__container-horizontal">
+        <h2 class="modal__heading">Change profile picture</h2>
+        <form class="modal__form" id="edit-profile-image-form">
+          <input
+            class="modal__input"
+            type="url"
+            name="link"
+            placeholder="Image Url"
+            id="profile-picture-add-link-input"
+            minlength="2"
+            required
+          />
+          <button
+            class="modal__button modal__button_profile-image"
+            type="submit"
+          >
+            Save
+          </button>
+        </form>
+        <button class="modal__close" type="button"></button>
+      </div>
+    </div>
+
+    <!-- Delete Card Modal -->
+
+    <div class="modal" id="delete-image-modal">
+      <div class="modal__container modal__container-horizontal">
+        <h2 class="modal__heading modal__heading_delete">Are you sure?</h2>
+        <button class="modal__close" type="button"></button>
+      </div>
+    </div>
+
     <!-- Card Template -->
     <template id="card-template">
       <li class="card">
-        <button
-          type="button"
-          class="card__delete-button"
-          id="card-delete-button"
-        ></button>
+        <button type="button" class="card__delete-button"></button>
         <img src="" class="card__image" alt="" />
         <div class="card__description">
           <h3 class="card__subtitle"></h3>
