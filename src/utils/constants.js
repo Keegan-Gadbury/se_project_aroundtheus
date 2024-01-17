@@ -37,7 +37,6 @@ export const profileEditFormElement =
   profileEditModal.querySelector(".modal__form");
 export const profileAddFormElement =
   profileAddModal.querySelector(".modal__form");
-// export const deleteCardButton =
 
 // Buttons and other DOM Nodes
 export const profileEditButton = document.querySelector("#profile-edit-button");
@@ -63,6 +62,8 @@ profileEditFormElement.querySelector("#add-create-button");
 export const profilePictureSubmitModalButton = document.querySelector(
   ".modal__button_profile"
 );
+
+export const profileImage = document.querySelector("#profile-image");
 
 // Form Data
 export const cardTitleInput = document.querySelector(

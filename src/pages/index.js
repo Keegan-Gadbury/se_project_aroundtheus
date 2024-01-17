@@ -35,6 +35,7 @@ import {
   profileImageEditPopup,
   profilePictureSubmitModalButton,
   deleteCardButton,
+  profileImage,
   config,
 } from "../utils/constants.js";
 
@@ -103,7 +104,7 @@ function handleEditProfileFormSubmit(data) {
 }
 
 function handleProfilePictureEditSubmit(data) {
-  userInfo.editProfileImage(data);
+  userInfo.setProfileImage(data);
   profilePictureEditPopup.close();
 }
 
